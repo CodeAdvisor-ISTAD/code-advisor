@@ -1,6 +1,6 @@
 package co.istad.codeadvisor.notification.service;
 
-import co.istad.codeadvisor.notification.domain.Notification;
+import co.istad.codeadvisor.notification.domain.Content;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.context.annotation.Bean;
@@ -16,16 +16,16 @@ public class NotificationService {
     private final SimpMessagingTemplate messagingTemplate;
 
     @Bean
-    public Function<KStream<String, Notification>, KStream<String, Notification>> notificationProcessor() {
+    public Function<KStream<String, Content>, KStream<String, Content>> notificationProcessor() {
 
-        return input -> input.peek((key, notification) -> {
+        return input -> input.peek((key, content) -> {
 
-            System.out.println("Processing notification: " + notification);
+            System.out.println("Processing notification: " + content);
 
             // Add your processing logic here
             // Save into your database
 
-            messagingTemplate.convertAndSend("/topic/notifications", notification);
+            messagingTemplate.convertAndSend("/topic/notifications", content);
         });
 
     }

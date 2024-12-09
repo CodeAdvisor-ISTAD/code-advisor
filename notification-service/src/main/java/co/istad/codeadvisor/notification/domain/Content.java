@@ -1,6 +1,5 @@
-package co.istad.codeadvisor.content.domain;
+package co.istad.codeadvisor.notification.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.io.Serializable;
@@ -25,8 +24,6 @@ public class Content {
     private boolean isRead;
     private String senderId;
     private String receiverId;
-
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS")
     private LocalDateTime createdAt;
 
 }

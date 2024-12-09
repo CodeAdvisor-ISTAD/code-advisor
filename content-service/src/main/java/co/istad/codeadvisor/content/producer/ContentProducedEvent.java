@@ -13,13 +13,13 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ContentProducedEvent {
 
-    private final KafkaTemplate<String, Content> kafkaTemplate;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
     @PostMapping
-    public Content createNotification(@RequestBody Content content) throws JsonProcessingException {
+    public Content createNotification(@RequestBody Content content){
 
         content.setId(UUID.randomUUID().toString());
-        content.setCreatedAt(LocalDateTime.now());
+//        content.setCreatedAt(LocalDateTime.now());
         content.setRead(false);
 
         kafkaTemplate.send("content-events", content.getId(), content);

@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CodeAdvisor.iml" filepath="$PROJECT_DIR$/.idea/CodeAdvisor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/content-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/content-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notification-service.main.iml" />
     </modules>
   </component>
 </project>

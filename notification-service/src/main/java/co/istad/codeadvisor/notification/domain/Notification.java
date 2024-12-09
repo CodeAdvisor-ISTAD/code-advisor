@@ -74,10 +74,6 @@ public class Notification {
     private String receiverId;
     private LocalDateTime createdAt;
 
-    // change to string for test type
-//    private String createdAt;
-
-
 }
 
 
