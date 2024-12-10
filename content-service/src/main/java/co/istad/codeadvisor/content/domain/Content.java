@@ -16,18 +16,14 @@ public class Content {
     private String id;
     private String title;
     private String message;
-
-    // Represents of the Content or Forum
-    private String notificationData;
-
-    // Enum for notification types LIKE, COMMENT, REPLIES
-    private String notificationType;
+    private NotificationData notificationData;
+    private NotificationType notificationType;
     private boolean isRead;
     private String senderId;
     private String receiverId;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS")
-    private LocalDateTime createdAt;
+//    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS")
+//    private LocalDateTime createdAt;
 
 }
 

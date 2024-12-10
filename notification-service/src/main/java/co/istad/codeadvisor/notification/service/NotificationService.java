@@ -1,6 +1,6 @@
 package co.istad.codeadvisor.notification.service;
 
-import co.istad.codeadvisor.notification.domain.Content;
+import co.istad.codeadvisor.notification.domain.Notification;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ public class NotificationService {
     private final SimpMessagingTemplate messagingTemplate;
 
     @Bean
-    public Function<KStream<String, Content>, KStream<String, Content>> notificationProcessor() {
+    public Function<KStream<String, Notification>, KStream<String, Notification>> notificationProcessor() {
 
         return input -> input.peek((key, content) -> {
 

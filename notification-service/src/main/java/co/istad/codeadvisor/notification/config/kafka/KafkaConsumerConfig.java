@@ -117,8 +117,8 @@ public class KafkaConsumerConfig {
         config.put(ErrorHandlingDeserializer.KEY_DESERIALIZER_CLASS, StringDeserializer.class);
         config.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
         config.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
-        config.put(JsonDeserializer.TYPE_MAPPINGS, "content:co.istad.codeadvisor.notification.domain.Content");
-        config.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "co.istad.codeadvisor.notification.domain.Content");
+        config.put(JsonDeserializer.TYPE_MAPPINGS, "notification:co.istad.codeadvisor.notification.domain.Notification");
+        config.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "co.istad.codeadvisor.notification.domain.Notification");
 
         return new DefaultKafkaConsumerFactory<>(config, new ErrorHandlingDeserializer<>(new StringDeserializer()), new ErrorHandlingDeserializer<>(new JsonDeserializer<>(new ObjectMapper())));
     }

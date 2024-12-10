@@ -1,8 +1,7 @@
-package co.istad.codeadvisor.notification.domain;
-
+package co.istad.codeadvisor.notification.domain;//package co.istad.codeadvisor.notification.domain;
+//
 import lombok.*;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
