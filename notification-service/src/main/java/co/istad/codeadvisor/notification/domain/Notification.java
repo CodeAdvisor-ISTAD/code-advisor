@@ -23,11 +23,11 @@ public class Notification {
     private String message;
 
     // Object for notification types as Content or Forum
-    @Field("notification_type")
+    @Field("notification_Data")
     private NotificationData notificationData;
 
     // Enum for notification types LIKE, COMMENT, REPLY
-    @Field("action_type")
+    @Field("notification_type")
     private NotificationType notificationType;
 
     @Field("is_read")

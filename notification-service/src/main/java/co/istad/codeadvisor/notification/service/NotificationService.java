@@ -1,33 +1,17 @@
 package co.istad.codeadvisor.notification.service;
 
 import co.istad.codeadvisor.notification.domain.Notification;
-import lombok.RequiredArgsConstructor;
 import org.apache.kafka.streams.kstream.KStream;
-import org.springframework.context.annotation.Bean;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.function.Function;
 
-@Service
-@RequiredArgsConstructor
-public class NotificationService {
+public interface NotificationService {
 
-    private final SimpMessagingTemplate messagingTemplate;
+    List<Notification> getAllNotificationsByUserId(String userId);
 
-    @Bean
-    public Function<KStream<String, Notification>, KStream<String, Notification>> notificationProcessor() {
+    void markNotificationAsRead(String notificationId, Boolean read);
 
-        return input -> input.peek((key, content) -> {
-
-            System.out.println("Processing notification: " + content);
-
-            // Add your processing logic here
-            // Save into your database
-
-            messagingTemplate.convertAndSend("/topic/notifications", content);
-        });
-
-    }
+    void removeNotification(String notificationId);
 
 }

@@ -5,9 +5,9 @@ import co.istad.codeadvisor.notification.domain.NotificationData;
 import co.istad.codeadvisor.notification.domain.NotificationType;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface NotificationRepository extends MongoRepository<Notification, String> {
+import java.util.List;
 
-    Notification findByNotificationType(String notificationType);
+public interface NotificationRepository extends MongoRepository<Notification, String> { ;
 
-    Notification findByNotificationData(String notificationData);
+    List<Notification> findAllByReceiverId(String userId);
 }

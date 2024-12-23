@@ -29,6 +29,6 @@ public class NotificationConsumer {
         notificationRepository.save(notification);
 
         // Send the notification to WebSocket clients
-        messagingTemplate.convertAndSend("/topic/notifications", notification);
+        messagingTemplate.convertAndSend("/topic/notifications/" + notification.getReceiverId(), notification);
     }
 }
